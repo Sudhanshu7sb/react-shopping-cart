@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#select_sizes {
+  height: 50vh;
+  width: 100%;
+  border: none;
+  overflow: hidden;
+  display: flex !important;
+  flex-wrap: wrap;
+}
+#select_sizes::-moz-focus-inner {
+  border: 0;
+}
+#select_sizes:focus {
+  outline: none;
+}
+#select_sizes option {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  padding: 10px 0;
+  text-align: center;
+  /* margin-right: 20px; */
+  /* display: inline-block; */
+  display: inline-block !important;
+
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: lightgrey;
+  border-radius: 50%;
+  color: black;
+}
+
+#select_sizes option:hover {
+  border: 2px solid black;
+}
+#select_sizes option:active {
+  background-color: #f8f807;
+  color: black;
+  border: 2px solid black;
+}
+
+.cart-items-container {
+  overflow-y: scroll;
+}
+.cart-items:last-child {
+  border-bottom: none !important;
+}

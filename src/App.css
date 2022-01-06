@@ -37,7 +37,7 @@
   }
 }
 
-#select_sizes {
+/* #select_sizes {
   height: 50vh;
   width: 100%;
   border: none;
@@ -58,8 +58,8 @@
   padding: 10px 0;
   text-align: center;
   /* margin-right: 20px; */
-  /* display: inline-block; */
-  display: inline-block !important;
+/* display: inline-block; */
+/* display: inline-block !important;
 
   justify-content: center;
   align-items: center;
@@ -76,9 +76,8 @@
   background-color: #f8f807;
   color: black;
   border: 2px solid black;
-}
-
-.cart-items-container {
+} */
+*/ .cart-items-container {
   overflow-y: scroll;
 }
 .cart-items:last-child {

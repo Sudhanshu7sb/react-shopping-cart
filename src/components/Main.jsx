@@ -19,6 +19,7 @@ function Main({ products, cartItems, setCartItems, addToCart }) {
   }
   function handleChangeSize(size) {
     setSelectedSize(size);
+    console.log(size, "size");
     listProducts(size, sortProducts, setSortProducts, filterProducts);
   }
 
@@ -39,6 +40,8 @@ function Main({ products, cartItems, setCartItems, addToCart }) {
       setSortProducts(tempSortProducts.sort((a, b) => a.price - b.price));
     } else if (sizeOrSort === "highest") {
       setSortProducts(tempSortProducts.sort((a, b) => b.price - a.price));
+    } else if (sizeOrSort === "select") {
+      setSortProducts(tempFilterProducts);
     } else if (sizeOrSort !== "") {
       setSortProducts(
         tempFilterProducts.filter((prod) =>
@@ -52,15 +55,6 @@ function Main({ products, cartItems, setCartItems, addToCart }) {
 
   return (
     <section className='mt-20 px-20 flex '>
-      <Sizes
-        products={products}
-        sortProducts={sortProducts}
-        setSortProducts={setSortProducts}
-        sortOrder={sortOrder}
-        setSortOrder={sortProducts}
-        setSelectedSize={setSelectedSize}
-        handleChangeSize={handleChangeSize}
-      />
       <Products
         products={products}
         sortProducts={sortProducts}
@@ -69,6 +63,8 @@ function Main({ products, cartItems, setCartItems, addToCart }) {
         setSortOrder={sortProducts}
         handleSortByPrice={handleSortByPrice}
         addToCart={addToCart}
+        selectedSize={selectedSize}
+        handleChangeSize={handleChangeSize}
       />
     </section>
   );

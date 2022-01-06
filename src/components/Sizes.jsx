@@ -42,31 +42,19 @@ function Sizes({
 
   return (
     <aside className='w-[25%] '>
-      <div className='flex gap-2 flex-wrap w-3/4'>
-        <h3 className='text-xl font-semibold text-left m-2 w-full'>Sizes :</h3>
-        <div className='w-full'>
-          {/* {uniqueSizes.map((size, i) => (
-            <React.Fragment key={i}>
-              <button
-                className={`m-1 p-1 w-10 h-10 text-md  rounded-full border-2 hover:border-gray-900 ${
-                  selectedSizes?.includes(size)
-                    ? "bg-yellow-400"
-                    : "bg-gray-200"
-                } `}
-                onClick={() => {
-                  handleClick(size);
-                }}>
-                {size}
-              </button>
-            </React.Fragment>
-          ))} */}
+      <div className='flex gap-2 w-3/4'>
+        {/* <h3 className='text-xl font-semibold text-left m-2 w-full'>Sizes :</h3> */}
+        <label htmlFor='sizes'>Sizes : </label>
+        <div className='w-1/4'>
           <select
-            id='select_sizes'
-            multiple='mutliple'
+            name='sizes'
             className='w-full'
             onChange={(e) => handleChangeSize(e.target.value)}>
+            <option className='w-2/12 ' value='select'>
+              Select
+            </option>
             {uniqueSizes.map((size, i) => (
-              <option className='w-2/12 ' key={i}>
+              <option className='w-2/12 ' key={i} value={size}>
                 {size}
               </option>
             ))}
